@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "pmp-exam-tran-translator",
+    "version": "0.0.1",
+    "description": "Translates PMP Exam Train using Google Translate. For the page - http://career.lms.pmi.org/Kview/CustomCodeBehind/base/courseware/scorm/* (PMP Practice Exam)",
+    "icons": {
+        "16": "16x16.png",
+        "48": "48x48.png",
+        "128": "128x128.png"
+    },
+    "browser_action": {
+        "default_title": "PMP Exam Tran Translator",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://career.lms.pmi.org/Kview/CustomCodeBehind/base/courseware/scorm/*"],
+            "js": ["jquery.js","content.js"]
+        }
+    ],
+    "content_security_policy":
+        "script-src 'self' 'unsafe-eval'; object-src 'self'; img-src * data: 'self' 'unsafe-eval'"
+}
