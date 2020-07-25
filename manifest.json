@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "pmp-exam-tran-translator",
     "version": "0.0.1",
-    "description": "Translates PMP Exam Train using Google Translate. For the page - http://career.lms.pmi.org/Kview/CustomCodeBehind/base/courseware/scorm/* (PMP Practice Exam)",
+    "description": "Google Translate for PMP Practice Exam. For the page - http://career.lms.pmi.org/Kview/CustomCodeBehind/base/courseware/scorm/*",
     "icons": {
         "16": "16x16.png",
         "48": "48x48.png",
