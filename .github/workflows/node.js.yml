@@ -47,7 +47,9 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build # will run `yarn build` command
-      - name: Create Zip File
+      - name: Preparing artifacts folder
+        run: mkdir artifacts
+      - name: Zipping package
         uses: montudor/action-zip@v0.1.0
         with:
           args: zip -qq -r ./artifacts/package.zip ./dist
