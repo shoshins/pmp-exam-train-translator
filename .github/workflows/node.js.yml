@@ -63,6 +63,6 @@ jobs:
       - name: Attach the artifacts to current Release
         uses: skx/github-action-publish-binaries@release-1.3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
         with:
           releaseId: ${{ needs.create_release.outputs.id }}
