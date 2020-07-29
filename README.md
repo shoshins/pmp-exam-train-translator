@@ -19,6 +19,10 @@ Google Chrome Extenstions store:
 
 https://chrome.google.com/webstore/detail/pmp-exam-tran-translator/jkpnolnkacalnkhekhglefcknffdkahe/related?hl=en&authuser=0
 
+# Status
+
+![Node.js CI](https://github.com/shoshins/pmp-exam-train-translator/workflows/Node.js%20CI/badge.svg)
+
 # Screenshots:
 
 <img src="ScreenShot1.png" width="400">
