@@ -11,11 +11,9 @@ on:
 
 jobs:
   build:
-
     name: Check-Up
-
     runs-on: ubuntu-latest
-
+    
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x]
@@ -28,3 +26,22 @@ jobs:
     - uses: borales/actions-yarn@v2.3.0
       with:
         cmd: build # will run `yarn build` command
+  packaging:
+    name: Packaging
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+    if: github.event_name == 'release' && github.event.action == 'created'
+    steps:
+      - name: Create Zip File
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: zip -qq -r ./artifacts/package.zip ./dist
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          # Artifact name
+          name: Package
+          # A file, directory or wildcard pattern that describes what to upload
+          path: artifacts
