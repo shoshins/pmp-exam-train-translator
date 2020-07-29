@@ -1,9 +1,9 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const Crx = require('crx-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { version } = require('./package.json');
 
 module.exports = {
+    mode: 'production',
     entry: {
         'content': './src/js/content.js'
     },
@@ -16,7 +16,7 @@ module.exports = {
     devtool: 'eval-cheap-module-source-map',
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js?$/,
                 include: [path.resolve(__dirname, 'src')],
@@ -26,11 +26,13 @@ module.exports = {
     },
 
     plugins: [
-        new CopyWebpackPlugin([
-            { from: './manifest.json' },
-            { from: './src/images' },
-            { from: './src/views' },
-            { from: './src/js/jquery.3.5.1.js', to: "jquery.js" }
-        ])
+        new CopyPlugin({
+            patterns: [
+                         { from: './manifest.json' },
+                         { from: './src/images' },
+                         { from: './src/views' },
+                         { from: './src/js/jquery.3.5.1.js', to: "jquery.js" }
+                     ]
+        })
     ]
 };
