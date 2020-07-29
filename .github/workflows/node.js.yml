@@ -21,10 +21,13 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
+    - name: Getting Source files...
     - uses: actions/checkout@v2
+    - name: Initialization...
     - uses: borales/actions-yarn@v2.3.0
       with:
         cmd: install # will run `yarn install` command
+    - name: Building...
     - uses: borales/actions-yarn@v2.3.0
       with:
         cmd: build # will run `yarn build` command
@@ -32,10 +35,18 @@ jobs:
     name: Packaging
     needs: build
     runs-on: ubuntu-latest
-    env:
-      DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
     if: github.event_name == 'release' && github.event.action == 'created'
     steps:
+      - name: Getting Source files...
+      - uses: actions/checkout@v2
+      - name: Initialization...
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install # will run `yarn install` command
+      - name: Building...
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build # will run `yarn build` command
       - name: Create Zip File
         uses: montudor/action-zip@v0.1.0
         with:
