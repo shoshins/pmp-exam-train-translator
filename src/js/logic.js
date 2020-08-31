@@ -52,7 +52,8 @@ function translatePage(){
 
                             // Insert text
                             console.log("PMP EXAM TRAIN. " + j + " === " + lineText);
-                            overallText += lineText.replace(/&nbsp;/g, " ");
+                            overallText += lineText.replace(/&nbsp;/g, " ")
+                                .replace("", "f");
                             linesShown++;
 
                             // Add new line if it is answer line
