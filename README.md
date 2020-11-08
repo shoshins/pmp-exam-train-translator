@@ -1,5 +1,5 @@
 # What is it?
-Translater for the Official PMP Train Exam
+Translator for the Official PMP Train Exam
 
 Translates PMP Exam into any language you want. Using Google Translate.
 
