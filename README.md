@@ -17,7 +17,7 @@ Will works only on pages like http://career.lms.pmi.org/Kview/CustomCodeBehind/b
 # How to install
 Google Chrome Extenstions store:
 
-https://chrome.google.com/webstore/detail/pmp-exam-tran-translator/jkpnolnkacalnkhekhglefcknffdkahe/related?hl=en&authuser=0
+https://chrome.google.com/webstore/detail/pmp-exam-tran-translator/jkpnolnkacalnkhekhglefcknffdkahe
 
 # Status
 
